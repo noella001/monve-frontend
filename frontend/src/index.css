@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+.account-page { max-width: 1120px; margin: 0 auto; padding: 64px 24px 96px; }
+.account-auth { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+.account-page h1 { font-size: clamp(28px, 4vw, 46px); margin: 12px 0 20px; }
+.account-page h2 { font-size: 22px; margin-bottom: 20px; }
+.account-page p { font-size: 14px; line-height: 1.7; }
+.account-kicker { letter-spacing: .16em; font-size: 10px !important; }
+.account-panel { padding: 28px; background: var(--tone-111111); border: 1px solid var(--tone-2a2a2a); border-radius: 12px; }
+.account-panel label { display: block; font-size: 13px; margin: 18px 0; }
+.account-panel input { display: block; width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--tone-404040); background: var(--tone-0a0a0a); border-radius: 6px; }
+.account-primary { background: var(--tone-f5f5f5); color: var(--tone-0a0a0a); padding: 13px 22px; border-radius: 999px; margin: 18px 0; cursor: pointer; }
+.account-link { display: block; text-decoration: underline; text-underline-offset: 4px; font-size: 13px; margin-top: 20px; cursor: pointer; }
+.account-muted { color: var(--tone-a3a3a3); font-size: 12px !important; }
+.account-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+.account-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 36px 0; }
+.account-summary button { padding: 24px; text-align: left; border: 1px solid var(--tone-2a2a2a); border-radius: 12px; cursor: pointer; }
+.account-summary strong { display: block; font-size: 30px; margin-bottom: 12px; }
+.account-summary span { font-size: 12px; }
+.account-tabs { display: flex; gap: 24px; margin: 24px 0; }
+.account-tabs button { padding-bottom: 8px; cursor: pointer; font-size: 13px; }
+.account-tabs button[aria-pressed="true"] { border-bottom: 2px solid currentColor; }
+.account-empty { text-align: center; padding: 40px 0; }
+.account-order { border-top: 1px solid var(--tone-2a2a2a); padding: 20px 0; }
+.account-order summary { display: flex; justify-content: space-between; gap: 16px; cursor: pointer; font-size: 12px; overflow-wrap: anywhere; }
+.account-order small { display: block; margin-top: 8px; color: var(--tone-a3a3a3); }
+.account-order p { margin-top: 12px; }
+.account-page button:disabled { opacity: .5; cursor: wait; }
+.account-page [role="alert"] { padding: 12px; border: 1px solid var(--brand-oxblood-soft); margin: 12px 0; }
+@media (max-width: 767px) {
+  .account-auth { grid-template-columns: 1fr; gap: 28px; }
+  .account-page { padding: 32px 16px 60px; }
+  .account-summary { gap: 8px; }
+  .account-summary button { min-width: 0; padding: 12px; overflow-wrap: anywhere; }
+  .account-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .account-tabs { flex-wrap: wrap; gap: 12px 20px; }
+}
+@layer base {
+  :root {
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--tone-0a0a0a);
+    color: var(--tone-f5f5f5);
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--tone-0a0a0a);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tone-2a2a2a);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tone-404040);
+}
+
+/* Monve's fixed oxblood and warm ivory brand palette. */
+:root {
+  color-scheme: light;
+  --brand-oxblood: #4b1417;
+  --brand-oxblood-deep: #301014;
+  --brand-oxblood-soft: #6b292d;
+  --brand-ivory: #f3efe6;
+  --brand-ivory-dim: #e8e0d5;
+  --brand-ivory-bright: #fbf8f1;
+  --color-white: #fbf8f1;
+  --color-black: #4b1417;
+  --color-amber-200: #78544b;
+  --color-amber-300: #70433f;
+  --color-amber-400: #633236;
+  --color-amber-950: #e8e0d5;
+  --color-emerald-400: #4b1417;
+  --color-emerald-300: #6b292d;
+  --color-emerald-500: #572024;
+  --color-emerald-600: #4b1417;
+  --color-emerald-950: #e8e0d5;
+  --color-blue-400: #6b292d;
+  --color-blue-500: #572024;
+  --color-blue-950: #e8e0d5;
+  --color-amber-500: #6b292d;
+  --color-amber-900: #e8e0d5;
+  --color-red-300: #6b292d;
+  --color-red-400: #4b1417;
+  --color-red-800: #e8e0d5;
+  --color-red-900: #e8e0d5;
+  --color-red-950: #e8e0d5;
+  --tone-0a0a0a: #f3efe6;
+  --tone-f5f5f5: #4b1417;
+  --tone-161616: #eae4d9;
+  --tone-ffffff: #51171b;
+  --tone-a3a3a3: #775c55;
+  --tone-0f0f0f: #ece6dc;
+  --tone-262626: #d7cabe;
+  --tone-222222: #e0d5c9;
+  --tone-d4d4d4: #572024;
+  --tone-1c1c1c: #e4ddd2;
+  --tone-737373: #765c55;
+  --tone-000000: #faf7f0;
+  --tone-e5e5e5: #ded3c8;
+  --tone-151515: #ede7dd;
+  --tone-171717: #eee7dc;
+  --tone-2a2a2a: #d8cbbf;
+  --tone-2e2e2e: #d7c9bd;
+  --tone-111111: #ebe5db;
+  --tone-121212: #e7dfd4;
+  --tone-888888: #856c64;
+  --tone-1e1e1e: #e6ded3;
+  --tone-181818: #e8e0d5;
+  --tone-2b2b2b: #d6c9bd;
+  --tone-1f1f1f: #e5dcd0;
+  --tone-0d0d0d: #eee8de;
+  --tone-282828: #d8cabe;
+  --tone-333333: #cfbeb0;
+  --tone-1a1a1a: #e2d8cc;
+  --tone-292929: #d6c7bb;
+  --tone-050505: #fcf8f0;
+  --tone-a0a0a0: #80675f;
+  --tone-404040: #c5b4a8;
+  --tone-707070: #82695f;
+  --tone-525252: #92796f;
+  --tone-383838: #ccb9aa;
+  --tone-999999: #7e665e;
+  --tone-252525: #dbcec1;
+  --tone-202020: #e0d4c7;
+  --tone-242424: #dccfc2;
+  --tone-070707: #f7f3ea;
+  --tone-141414: #ede6db;
+  --tone-2f2f2f: #d0bdae;
+  --tone-101010: #ece5da;
+  --tone-171512: #e9e1d6;
+  --tone-303030: #d0bdad;
+}
